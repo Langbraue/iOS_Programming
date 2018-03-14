@@ -13,11 +13,16 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSMutableArray *items = [[NSMutableArray alloc] init];
         
-        BNRItem *p = [[BNRItem alloc] initWithItemName:@"Rosa Sofa"
-                                        valueInDollars:0
-                                          serialNumber:@"AD4E-3RBH-9IJS-OKD9-09PH"];
-        NSLog(@"%@",p);
-       
+        for (int i=0; i < 10; i++){
+            BNRItem *p = [BNRItem randomItem];
+            [items addObject:p];
+        }
+        
+        for (BNRItem *item in items) {
+            NSLog(@"%@", item);
+        }
+        NSLog(@"%@", [[BNRItem alloc] initWithNameAndSerialnumber:@"Klappt"
+                                                     serialNumber:@"a9g7b5"]);
         items = nil;
         
     }

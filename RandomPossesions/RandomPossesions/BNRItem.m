@@ -62,7 +62,13 @@
                    valueInDollars:0
                      serialNumber:@""];
 }
-
+- (id) initWithNameAndSerialnumber:(NSString *)name
+                      serialNumber:(NSString *)snumber
+{
+    return [self initWithItemName:name
+                   valueInDollars:0
+                     serialNumber:snumber];
+}
 // other methods
 -(NSString *)description
 {
